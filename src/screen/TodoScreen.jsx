@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { IconButton } from 'react-native-paper'
 import Fallback from '../components/Fallback'
@@ -11,7 +11,7 @@ const TodoScreen = () => {
 
     const handleAddTodo = () => {
 
-        if(todo === ""){
+        if (todo === "") {
             return alert("Please Enter the Task")
         }
         setTodoList([...todoList, { id: Date.now().toString(), title: todo }]);
@@ -31,24 +31,24 @@ const TodoScreen = () => {
 
     const handleUpdate = () => {
         const updateTodo = todoList.map((item) => {
-            if(item.id === editedTodo.id) {
-                return{...item , title: todo}
+            if (item.id === editedTodo.id) {
+                return { ...item, title: todo }
             }
             return item
         })
         setTodoList(updateTodo)
         setEditedTodo(null)
-        setTodo( "")
+        setTodo("")
     }
 
     const renderTodos = ({ item, index }) => {
         return (
-
             <View style={styles.text}>
                 <Text style={{ flex: 1, fontSize: 20 }} >{item.title}</Text>
                 <IconButton icon="pencil" iconColor="blue" size={25} onPress={() => handleEdit(item)} />
                 <IconButton icon="delete" iconColor="red" size={25} onPress={() => handleDelete(item.id)} />
             </View>
+
 
 
         )
@@ -71,7 +71,10 @@ const TodoScreen = () => {
 
 
             <View style={styles.form}>
+                <ScrollView>
+
                 <FlatList data={todoList} renderItem={renderTodos} />
+                </ScrollView>
                 {todoList.length === 0 && <Fallback />}
             </View>
 

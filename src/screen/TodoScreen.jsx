@@ -11,11 +11,13 @@ const TodoScreen = () => {
 
     const handleAddTodo = () => {
 
-        if (todo === "") {
+        if (todo === " ") {
             return alert("Please Enter the Task")
         }
         setTodoList([...todoList, { id: Date.now().toString(), title: todo }]);
         setTodo(" ")
+
+       
     }
 
 
@@ -110,5 +112,6 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor: "lightgray",
         borderRadius: 5,
+        height: 600
     }
 })

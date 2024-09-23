@@ -5,7 +5,7 @@ const Fallback = () => {
   return (
     <View style={{alignItems:'center', marginBottom:55}}>
       <Image source={require("../../assets/todo.png")} style={{height:400 , width:400}}/>
-      <Text style={{margin:20}}>Start Adding Your Task</Text>
+      <Text className="m-5">Start Adding Your Task</Text>
     </View>
   )
 }

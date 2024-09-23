@@ -63,11 +63,11 @@ const TodoScreen = () => {
 
             {editedTodo ? (
                 <TouchableOpacity onPress={() => handleUpdate()} >
-                    <Text style={styles.text}>Save</Text>
+                    <Text style={styles.btn}>Save</Text>
                 </TouchableOpacity>
             ) : (
                 <TouchableOpacity onPress={() => handleAddTodo()} >
-                    <Text style={styles.text}>Add Task</Text>
+                    <Text style={styles.btn}>Add Task</Text>
                 </TouchableOpacity>)}
 
 
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
         padding: 10,
         margin: 10,
         borderRadius: 5,
+        
     },
     text: {
         backgroundColor: "lightblue",
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         flexDirection: "row",
         alignItems: "center",
+        elevation: 5,
 
     },
     form: {
@@ -113,5 +115,15 @@ const styles = StyleSheet.create({
         backgroundColor: "lightgray",
         borderRadius: 5,
         height: 600
+    },
+    btn:{
+        backgroundColor: "lightblue",
+        padding: 5,
+        margin: 10,
+        borderRadius: 5,
+        textAlign: 'center',
+        fontSize: 20,
+        flexDirection: "row",
+        alignItems: "center",
     }
 })

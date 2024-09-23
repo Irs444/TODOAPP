@@ -6,7 +6,7 @@ export default function App() {
   return (
     <SafeAreaView >
       <View  style={{marginTop:50}}>
-        <Text style={{textAlign:"center", fontSize:20, fontWeight:"bold"}}>Todo App</Text>
+        <Text className="text-2xl text-center font-bold">Todo App</Text>
         <TodoScreen />
       </View>
     </SafeAreaView>
